@@ -1,3 +1,5 @@
+#Sample: Build Windows2019 vShere Templates
+
 variable "vm-cpu-num" {}
 variable "vsphere-server" {}
 variable "vsphere-user" {}
