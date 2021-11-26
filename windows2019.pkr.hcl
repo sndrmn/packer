@@ -29,7 +29,7 @@ variable "os_iso_path" {}
   disk_controller_type = ["lsilogic-sas"]
   firmware             = "bios"
   floppy_files         = ["autounattend.xml", "scripts/enable-winrm.ps1", "scripts/install-vm-tools.cmd"]
-  folder               = "${var.vsphere-folder}"
+  folder               = "Tenplates"
   guest_os_type        = "windows9Server64Guest"
   insecure_connection  = "true"
   iso_paths            = ["${var.os_iso_path}", "[] /vmimages/tools-isoimages/windows.iso"]
