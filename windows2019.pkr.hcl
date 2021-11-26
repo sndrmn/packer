@@ -1,15 +1,16 @@
 #Sample: Build Windows2019 vShere Templates
 
-variable "vserver" {default = "${env("VSERVER")}"}
-variable "vuser" {default = "${env("VUSER")}"}
-variable "vpassword" {default = "${env("VPASSWORD")}"}
-variable "vdatacenter" {default = "${env("VDATACENTER")}"}
-variable "vcluster" {default = "${env("VCLUSTER")}"}
-variable "vnetwork" {default = "${env("VNETWORK")}"}
-variable "vdatastore" {default = "${env("VDATASTORE")}"}
-variable "vmname" {default = "${env("VMNAME")}"}
-variable "winadminpassword" {default = "${env("WINPASSWORD")}"}
-variable "isopath" {default = "${env("ISOPATH")}"}
+variable "vserver" {default = "${env("PKR_VAR_VSERVER")}"}
+variable "vuser" {default = "${env("PKR_VAR_VUSER")}"}
+variable "vpassword" {default = "${env("PKR_VAR_VPASSWORD")}"}
+variable "vdatacenter" {default = "${env("PKR_VAR_VDATACENTER")}"}
+variable "vcluster" {default = "${env("PKR_VAR_VCLUSTER")}"}
+variable "vnetwork" {default = "${env("PKR_VAR_VNETWORK")}"}
+variable "vdatastore" {default = "${env("PKR_VAR_VDATASTORE")}"}
+variable "vmname" {default = "${env("PKR_VAR_VMNAME")}"}
+variable "winadminpassword" {default = "${env("PKR_VAR_WINPASSWORD")}"}
+variable "isopath" {default = "${env("PKR_VAR_ISOPATH")}"}
+variable "vfolder" {default = "${env("PKR_VAR_VFOLDER")}"}
 
   
   source "vsphere-iso" "windows2019" {
@@ -24,7 +25,7 @@ variable "isopath" {default = "${env("ISOPATH")}"}
   disk_controller_type = ["lsilogic-sas"]
   firmware             = "bios"
   floppy_files         = ["autounattend.xml", "scripts/enable-winrm.ps1", "scripts/install-vm-tools.cmd"]
-  folder               = "Tenplates"
+  folder               = "${var.vfolder}"
   guest_os_type        = "windows9Server64Guest"
   insecure_connection  = "true"
   iso_paths            = ["${var.isopath}", "[] /vmimages/tools-isoimages/windows.iso"]
