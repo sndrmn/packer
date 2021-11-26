@@ -18,8 +18,8 @@ variable "os_iso_path" {}
 
   
   source "vsphere-iso" "windows2019" {
-  CPUs                 = ${var.vm-cpu-num}
-  RAM                  = ${var.vm-mem-size}
+  CPUs                 = "${var.vm-cpu-num}"
+  RAM                  = "${var.vm-mem-size}"
   RAM_reserve_all      = true
   cluster              = "${var.vsphere-cluster}"
   communicator         = "winrm"
@@ -39,8 +39,8 @@ variable "os_iso_path" {}
   }
   password = "${var.vsphere-password}"
   storage {
-    disk_size             = ${var.os-disk-size}
-    disk_thin_provisioned = ${var.disk-thin-provision}
+    disk_size             = "${var.os-disk-size}"
+    disk_thin_provisioned = "${var.disk-thin-provision}"
   }
   username       = "${var.vsphere-user}"
   vcenter_server = "${var.vsphere-server}"
