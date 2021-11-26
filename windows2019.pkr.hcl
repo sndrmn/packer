@@ -1,46 +1,46 @@
 #Sample: Build Windows2019 vShere Templates
 
-variable "vsphere-server" {}
-variable "vsphere-user" {}
-variable "vsphere-password" {}
-variable "vsphere-datacenter" {}
-variable "vsphere-cluster" {}
-variable "vsphere-network" {}
-variable "vsphere-datastore" {}
-variable "vm-name" {}
-variable "winadmin-password" {}
-variable "os_iso_path" {}
+variable "vserver" {}
+variable "vuser" {}
+variable "vpassword" {}
+variable "vdatacenter" {}
+variable "vcluster" {}
+variable "vnetwork" {}
+variable "vdatastore" {}
+variable "vmname" {}
+variable "winadminpassword" {}
+variable "isopath" {}
 
   
   source "vsphere-iso" "windows2019" {
   CPUs                 = 2
   RAM                  = 4096
   RAM_reserve_all      = true
-  cluster              = "${var.vsphere-cluster}"
+  cluster              = "${var.vcluster}"
   communicator         = "winrm"
   convert_to_template  = "true"
-  datacenter           = "${var.vsphere-datacenter}"
-  datastore            = "${var.vsphere-datastore}"
+  datacenter           = "${var.vdatacenter}"
+  datastore            = "${var.vdatastore}"
   disk_controller_type = ["lsilogic-sas"]
   firmware             = "bios"
   floppy_files         = ["autounattend.xml", "scripts/enable-winrm.ps1", "scripts/install-vm-tools.cmd"]
   folder               = "Tenplates"
   guest_os_type        = "windows9Server64Guest"
   insecure_connection  = "true"
-  iso_paths            = ["${var.os_iso_path}", "[] /vmimages/tools-isoimages/windows.iso"]
+  iso_paths            = ["${var.isopath}", "[] /vmimages/tools-isoimages/windows.iso"]
   network_adapters {
-    network      = "${var.vsphere-network}"
+    network      = "${var.vnetwork}"
     network_card = "vmxnet3"
   }
-  password = "${var.vsphere-password}"
+  password = "${var.vpassword}"
   storage {
     disk_size             = 40960
     disk_thin_provisioned = true
   }
-  username       = "${var.vsphere-user}"
-  vcenter_server = "${var.vsphere-server}"
-  vm_name        = "${var.vm-name}"
-  winrm_password = "${var.winadmin-password}"
+  username       = "${var.vuser}"
+  vcenter_server = "${var.vserver}"
+  vm_name        = "${var.vmname}"
+  winrm_password = "${var.winadminpassword}"
   winrm_timeout  = "1h30m"
   winrm_username = "Administrator"
 }
