@@ -1,6 +1,5 @@
 #Sample: Build Windows2019 vShere Templates
 
-variable "vm-cpu-num" {}
 variable "vsphere-server" {}
 variable "vsphere-user" {}
 variable "vsphere-password" {}
@@ -8,11 +7,7 @@ variable "vsphere-datacenter" {}
 variable "vsphere-cluster" {}
 variable "vsphere-network" {}
 variable "vsphere-datastore" {}
-variable "vsphere-folder" {}
 variable "vm-name" {}
-variable "vm-mem-size" {}
-variable "os-disk-size" {}
-variable "disk-thin-provision" {}
 variable "winadmin-password" {}
 variable "os_iso_path" {}
 
