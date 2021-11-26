@@ -1,15 +1,15 @@
 #Sample: Build Windows2019 vShere Templates
 
-variable "vserver" {}
-variable "vuser" {}
-variable "vpassword" {}
-variable "vdatacenter" {}
-variable "vcluster" {}
-variable "vnetwork" {}
-variable "vdatastore" {}
-variable "vmname" {}
-variable "winadminpassword" {}
-variable "isopath" {}
+variable "vserver" {default = "${env("VSERVER")}"}
+variable "vuser" {default = "${env("VUSER")}"}
+variable "vpassword" {default = "${env("VPASSWORD")}"}
+variable "vdatacenter" {default = "${env("VDATACENTER")}"}
+variable "vcluster" {default = "${env("VCLUSTER")}"}
+variable "vnetwork" {default = "${env("VNETWORK")}"}
+variable "vdatastore" {default = "${env("VDATASTORE")}"}
+variable "vmname" {default = "${env("VMNAME")}"}
+variable "winadminpassword" {default = "${env("WINPASSWORD")}"}
+variable "isopath" {default = "${env("ISOPATH")}"}
 
   
   source "vsphere-iso" "windows2019" {
