@@ -1,12 +1,12 @@
 #Sample: Build Windows2019 vShere Templates
 
-variable "vserver" {default = "${env("PKR_VAR_VSERVER")}"}
-variable "vuser" {default = "${env("PKR_VAR_VUSER")}"}
-variable "vpassword" {default = "${env("PKR_VAR_VPASSWORD")}"}
-variable "vdatacenter" {default = "${env("PKR_VAR_VDATACENTER")}"}
-variable "vcluster" {default = "${env("PKR_VAR_VCLUSTER")}"}
-variable "vnetwork" {default = "${env("PKR_VAR_VNETWORK")}"}
-variable "vdatastore" {default = "${env("PKR_VAR_VDATASTORE")}"}
+variable "vserver" {default = "${env("PKR_VAR_VCSERVER")}"}
+variable "vuser" {default = "${env("PKR_VAR_VCUSER")}"}
+variable "vpassword" {default = "${env("PKR_VAR_VCPASSWORD")}"}
+variable "vdatacenter" {default = "${env("PKR_VAR_VCDC")}"}
+variable "vcluster" {default = "${env("PKR_VAR_VCCLUSTER")}"}
+variable "vnetwork" {default = "${env("PKR_VAR_VCNETWORK")}"}
+variable "vdatastore" {default = "${env("PKR_VAR_VCDATASTORE")}"}
 variable "vmname" {default = "${env("PKR_VAR_VMNAME")}"}
 variable "winadminpassword" {default = "${env("PKR_VAR_WINPASSWORD")}"}
 variable "isopath" {default = "${env("PKR_VAR_ISOPATH")}"}
