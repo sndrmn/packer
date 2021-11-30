@@ -66,7 +66,7 @@ build {
       "include:$true",
     ]
     update_limit = 1
-  vi }
+  }
 
   #Inserted reboot as sysprep step fails due to waiting for windows updates to install
   provisioner "windows-restart" {
