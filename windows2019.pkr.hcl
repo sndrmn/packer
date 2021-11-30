@@ -1,5 +1,14 @@
 #Sample: Build Windows2019 vShere Templates
 
+packer {
+  required_plugins {
+    windows-update = {
+      version = "0.14.0"
+      source = "github.com/rgl/windows-update"
+    }
+  }
+}
+
 variable "vserver" {default = "${env("PKR_VAR_VCSERVER")}"}
 variable "vuser" {default = "${env("PKR_VAR_VCUSER")}"}
 variable "vpassword" {default = "${env("PKR_VAR_VCPASSWORD")}"}
@@ -57,7 +66,7 @@ build {
       "include:$true",
     ]
     update_limit = 1
-  }
+  vi }
 
   #Inserted reboot as sysprep step fails due to waiting for windows updates to install
   provisioner "windows-restart" {
