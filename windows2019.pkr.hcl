@@ -59,14 +59,14 @@ build {
   sources = ["source.vsphere-iso.windows2019"]
 
   #Windows Update Plugin has already been downloaded inside container image
-  provisioner "windows-update" {
-    search_criteria = "IsInstalled=0"
-    filters = [
-      "exclude:$_.Title -like '*Preview*'",
-      "include:$true",
-    ]
-    update_limit = 1
-  }
+  #provisioner "windows-update" {
+  #  search_criteria = "IsInstalled=0"
+  #  filters = [
+  #    "exclude:$_.Title -like '*Preview*'",
+  #    "include:$true",
+  #  ]
+  #  update_limit = 1
+  #}
 
   #Inserted reboot as sysprep step fails due to waiting for windows updates to install
   provisioner "windows-restart" {
