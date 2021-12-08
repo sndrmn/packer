@@ -1,13 +1,13 @@
 #Sample: Build Windows2019 vShere Templates
 
-packer {
-  required_plugins {
-    windows-update = {
-      version = "0.14.0"
-      source = "github.com/rgl/windows-update"
-    }
-  }
-}
+#packer {
+#  required_plugins {
+#    windows-update = {
+#      version = "0.14.0"
+#      source = "github.com/rgl/windows-update"
+#    }
+#  }
+#}
 
 variable "vserver" {default = "${env("PKR_VAR_VCSERVER")}"}
 variable "vuser" {default = "${env("PKR_VAR_VCUSER")}"}
