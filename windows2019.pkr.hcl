@@ -69,9 +69,9 @@ build {
   #}
 
   #Inserted reboot as sysprep step fails due to waiting for windows updates to install
-  provisioner "windows-restart" {
-    restart_timeout = "15m"
-  }
+  #provisioner "windows-restart" {
+  #  restart_timeout = "15m"
+  #}
 
 
   provisioner "windows-shell" {
